@@ -8,6 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: unzip -oq "$(ls *.zip | head -1)" -d src
+      - run: sed -i 's/compileSdk = 36/compileSdk = 37/' src/AIClipHunter/app/build.gradle.kts
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
